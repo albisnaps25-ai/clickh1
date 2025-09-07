@@ -3,100 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FanConnect - Join Your Favorite Creators</title>
+    <title>Luna Star - Exclusive Content</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background-color: #f5f5f5;
+            background-color: #fff;
         }
 
-        /* Header/Hero Section */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #ff5e62, #f7b733);
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
             color: white;
             text-align: center;
             padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .cta-button {
             background-color: #fff;
-            color: #ff5e62;
-            padding: 15px 30px;
-            border-radius: 25px;
+            color: #ff416c;
+            padding: 15px 35px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         .cta-button:hover {
-            background-color: #f0f0f0;
+            background-color: #f5f5f5;
+            transform: scale(1.05);
         }
 
-        /* Creator Highlights */
-        .creators {
-            padding: 50px 20px;
+        /* Creator Content Section */
+        .content {
+            padding: 60px 20px;
             text-align: center;
+            background-color: #f9f9f9;
         }
 
-        .creators h2 {
+        .content h2 {
             font-size: 2rem;
-            margin-bottom: 40px;
+            color: #333;
+            margin-bottom: 20px;
         }
 
-        .creator-grid {
+        .creator-bio {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .creator-bio p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .content-grid {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
 
-        .creator-card {
+        .content-card {
             background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 250px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
             padding: 20px;
             text-align: center;
         }
 
-        .creator-card img {
+        .content-card img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
         }
 
-        .creator-card h3 {
-            font-size: 1.2rem;
+        .content-card h3 {
+            font-size: 1.3rem;
+            color: #ff416c;
             margin-bottom: 10px;
         }
 
-        .creator-card p {
-            color: #666;
+        .content-card p {
             font-size: 0.9rem;
+            color: #666;
         }
 
         /* Footer */
         .footer {
-            background-color: #333;
+            background-color: #222;
             color: white;
             text-align: center;
             padding: 20px;
@@ -104,9 +121,13 @@
         }
 
         .footer a {
-            color: #f7b733;
+            color: #ff4b2b;
             text-decoration: none;
             margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -114,9 +135,13 @@
                 font-size: 2rem;
             }
 
-            .creator-card {
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .content-card {
                 width: 100%;
-                max-width: 300px;
+                max-width: 350px;
             }
         }
     </style>
@@ -124,37 +149,40 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Join FanConnect Today</h1>
-        <p>Support your favorite creators and unlock exclusive content!</p>
-        <a href="#signup" class="cta-button">Get Started</a>
+        <h1>Join Luna Star’s Exclusive World</h1>
+        <p>Unlock premium content, behind-the-scenes moments, and more!</p>
+        <a href="#subscribe" class="cta-button">Subscribe Now</a>
     </section>
 
-    <!-- Creator Highlights -->
-    <section class="creators">
-        <h2>Meet Our Creators</h2>
-        <div class="creator-grid">
-            <div class="creator-card">
-                <img src="https://via.placeholder.com/250x150" alt="Creator 1">
-                <h3>Jane Doe</h3>
-                <p>Exclusive fitness tutorials and behind-the-scenes content.</p>
+    <!-- Creator Content Section -->
+    <section class="content">
+        <h2>Why Subscribe to Luna Star?</h2>
+        <div class="creator-bio">
+            <p>Hi, I’m Luna Star! Join me for exclusive lifestyle content, personal Q&As, and behind-the-scenes access you won’t find anywhere else. Subscribe today to become part of my inner circle!</p>
+        </div>
+        <div class="content-grid">
+            <div class="content-card">
+                <img src="https://via.placeholder.com/300x180" alt="Exclusive Content">
+                <h3>Exclusive Videos</h3>
+                <p>Weekly videos with tips, stories, and more, just for subscribers.</p>
             </div>
-            <div class="creator-card">
-                <img src="https://via.placeholder.com/250x150" alt="Creator 2">
-                <h3>John Smith</h3>
-                <p>Daily music streams and songwriting tips.</p>
+            <div class="content-card">
+                <img src="https://via.placeholder.com/300x180" alt="Live Q&A">
+                <h3>Live Q&As</h3>
+                <p>Join monthly live sessions to chat with Luna directly.</p>
             </div>
-            <div class="creator-card">
-                <img src="https://via.placeholder.com/250x150" alt="Creator 3">
-                <h3>Emma Lee</h3>
-                <p>Art tutorials and creative inspiration.</p>
+            <div class="content-card">
+                <img src="https://via.placeholder.com/300x180" alt="Behind the Scenes">
+                <h3>Behind the Scenes</h3>
+                <p>Get a glimpse into Luna’s daily life and creative process.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 FanConnect. All rights reserved.</p>
-        <p><a href="#terms">Terms</a> | <a href="#privacy">Privacy</a> | <a href="#contact">Contact</a></p>
+        <p>&copy; 2025 Luna Star. All rights reserved.</p>
+        <p><a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a> | <a href="#contact">Contact</a></p>
     </footer>
 </body>
 </html>
