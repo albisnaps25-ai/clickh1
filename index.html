@@ -3,489 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRETTYTONI</title>
+    <title>FanConnect - Join Your Favorite Creators</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: #f8f9fa;
-            min-height: 100vh;
-            cursor: pointer;
+            background-color: #f5f5f5;
         }
 
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .header {
-            padding: 20px;
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff5e62, #f7b733);
+            color: white;
             text-align: center;
-            border-bottom: 1px solid #e0e0e0;
+            padding: 100px 20px;
         }
 
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
-        .profile-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .profile-info {
-            flex: 1;
-        }
-
-        .profile-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #1a237e;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .flag {
-            width: 24px;
-            height: 16px;
-            background: linear-gradient(to bottom, #ff0000 33%, #ffffff 33%, #ffffff 66%, #0000ff 66%);
-            border-radius: 2px;
-        }
-
-        .verified {
-            background: #1976d2;
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-
-        .stars {
-            display: flex;
-            gap: 2px;
-            margin-bottom: 15px;
-        }
-
-        .star {
-            color: #ffd700;
+        .hero p {
             font-size: 1.2rem;
+            margin-bottom: 30px;
         }
 
-        .stats {
-            display: flex;
-            gap: 30px;
-        }
-
-        .stat {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 1.1rem;
-        }
-
-        .stat-icon {
-            width: 20px;
-            height: 20px;
-            background: #1976d2;
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
-        }
-
-        .stat-number {
-            color: #e91e63;
-            font-weight: 600;
-        }
-
-        /* Banner ad section */
-        .banner-ad {
-            margin: 20px;
-            text-align: center;
-            padding: 10px;
-            border-radius: 12px;
-            background: #f5f5f5;
-        }
-
-        .banner-ad a {
-            display: inline-block;
+        .cta-button {
+            background-color: #fff;
+            color: #ff5e62;
+            padding: 15px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
         }
 
-        .banner-ad a:hover {
-            transform: scale(1.05);
+        .cta-button:hover {
+            background-color: #f0f0f0;
         }
 
-        .banner-ad img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        /* Creator Highlights */
+        .creators {
+            padding: 50px 20px;
+            text-align: center;
         }
 
-        .ad-section {
-            margin: 20px;
-            background: #000;
-            border-radius: 12px;
+        .creators h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .creator-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .creator-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
             padding: 20px;
             text-align: center;
-            color: white;
         }
 
-        .ad-title {
-            font-size: 1.5rem;
-            font-weight: bold;
+        .creator-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
 
-        .ad-button {
-            background: white;
-            color: #000;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .ad-button:hover {
-            transform: scale(1.05);
-            background: #f0f0f0;
-        }
-
-        .action-buttons {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: #1976d2;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #1565c0;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: #3f51b5;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: #303f9f;
-            transform: translateY(-2px);
-        }
-
-        .content-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
-            background-size: 400% 400%;
-            animation: gradientShift 6s ease infinite;
-            border-radius: 12px;
-            margin: 20px;
-            width: calc(100% - 40px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 400px;
-            background: white;
-            border-top: 1px solid #e0e0e0;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .nav-item {
-            padding: 10px;
-            color: #666;
+        .creator-card h3 {
             font-size: 1.2rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
+            margin-bottom: 10px;
         }
 
-        .nav-item:hover {
-            color: #1976d2;
+        .creator-card p {
+            color: #666;
+            font-size: 0.9rem;
         }
 
-        .nav-item.active {
-            color: #1976d2;
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
         }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .footer a {
+            color: #f7b733;
+            text-decoration: none;
+            margin: 0 10px;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                max-width: 100%;
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
             }
-            
-            .header {
-                padding: 10px 15px;
-            }
-            
-            .profile-section {
-                gap: 10px;
-            }
-            
-            .profile-image {
-                width: 70px;
-                height: 70px;
-                font-size: 1.3rem;
-            }
-            
-            .profile-name {
-                font-size: 1.2rem;
-                gap: 6px;
-            }
-            
-            .stats {
-                gap: 15px;
-                font-size: 0.9rem;
-            }
-            
-            .stat {
-                font-size: 0.85rem;
-                gap: 4px;
-            }
-            
-            .banner-ad {
-                margin: 10px 15px;
-                padding: 8px;
-            }
-            
-            .ad-section {
-                margin: 10px 15px;
-                padding: 15px 10px;
-            }
-            
-            .ad-title {
-                font-size: 1.1rem;
-                gap: 6px;
-            }
-            
-            .ad-button {
-                padding: 8px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .action-buttons {
-                padding: 10px 15px;
-                gap: 10px;
-            }
-            
-            .btn {
-                padding: 12px 14px;
-                font-size: 0.95rem;
-            }
-            
-            .content-image {
-                height: 250px;
-                margin: 15px;
-                width: calc(100% - 30px);
-                font-size: 1rem;
-                padding: 15px;
-            }
-        }
 
-        @media (max-width: 360px) {
-            .profile-name {
-                font-size: 1.1rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
+            .creator-card {
+                width: 100%;
+                max-width: 300px;
             }
-            
-            .profile-name > div {
-                display: flex;
-                gap: 6px;
-                align-items: center;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 8px;
-                align-items: flex-start;
-            }
-            
-            .content-image {
-                height: 200px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Click effects */
-        .clickable:hover {
-            background: #f5f5f5;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header clickable">
-            <div class="profile-section">
-                <div class="profile-image">PT</div>
-                <div class="profile-info">
-                    <div class="profile-name">
-                        PRETTYTONI 
-                        <div class="flag"></div>
-                        <div class="verified">✓</div>
-                    </div>
-                    <div class="stars">
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                        <span class="star">★</span>
-                    </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-icon">🎹</div>
-                            <span class="stat-number">342</span> videos
-                        </div>
-                        <div class="stat">
-                            <div class="stat-icon">🖼️</div>
-                            <span class="stat-number">614</span> photos
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Join FanConnect Today</h1>
+        <p>Support your favorite creators and unlock exclusive content!</p>
+        <a href="#signup" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- Creator Highlights -->
+    <section class="creators">
+        <h2>Meet Our Creators</h2>
+        <div class="creator-grid">
+            <div class="creator-card">
+                <img src="https://via.placeholder.com/250x150" alt="Creator 1">
+                <h3>Jane Doe</h3>
+                <p>Exclusive fitness tutorials and behind-the-scenes content.</p>
+            </div>
+            <div class="creator-card">
+                <img src="https://via.placeholder.com/250x150" alt="Creator 2">
+                <h3>John Smith</h3>
+                <p>Daily music streams and songwriting tips.</p>
+            </div>
+            <div class="creator-card">
+                <img src="https://via.placeholder.com/250x150" alt="Creator 3">
+                <h3>Emma Lee</h3>
+                <p>Art tutorials and creative inspiration.</p>
             </div>
         </div>
+    </section>
 
-        <!-- New Banner Ad Section -->
-        <div class="banner-ad">
-            <a href="https://t.mbslr2.com/371938/8780/0?bo=2779,2778,2777,2776,2775&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002" target="_blank">
-                <img src="https://www.imglnkx.com/8780/PMKT-1157_DESIGN-16618_BannersWebinar_AmyPose_300100.gif" width="300" height="100" border="0" alt="Banner Ad" />
-            </a>
-        </div>
-
-        <div class="ad-section clickable">
-            <div class="ad-title">
-                jerkmate 
-                <span style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); padding: 4px 8px; border-radius: 8px; font-size: 0.8rem;">🎮</span>
-            </div>
-            <button class="ad-button" onclick="redirectToMain()">TRY IT NOW</button>
-        </div>
-
-        <div class="action-buttons">
-            <button class="btn btn-primary" onclick="redirectToMain()">
-                🔒 Explicit Content
-            </button>
-            <button class="btn btn-secondary" onclick="redirectToMain()">
-                💎 +18 Livestream
-            </button>
-        </div>
-
-        <div class="content-image clickable">
-            Premium Content Preview
-        </div>
-
-        <div class="bottom-nav">
-            <div class="nav-item">◀</div>
-            <div class="nav-item">▶</div>
-            <div class="nav-item active">🏠</div>
-            <div class="nav-item">✨</div>
-            <div class="nav-item">⭐</div>
-            <div class="nav-item">📱</div>
-            <div class="nav-item">☰</div>
-        </div>
-    </div>
-
-    <script>
-        // Redirect to main link
-        function redirectToMain() {
-            window.open('https://t.mbslr2.com/371938/8780/0?bo=2779,2778,2777,2776,2775&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002', '_blank');
-        }
-
-        // Make entire page clickable (except banner ad) to redirect to main link
-        document.body.addEventListener('click', function(e) {
-            // Don't redirect if clicking on buttons or banner ad
-            if (!e.target.closest('button') && 
-                !e.target.closest('.banner-ad') &&
-                !e.target.classList.contains('ad-button')) {
-                window.open('https://t.mbslr2.com/371938/8780/0?bo=2779,2778,2777,2776,2775&file_id=598462&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002', '_blank');
-            }
-        });
-
-        // Add click effects
-        document.querySelectorAll('.clickable').forEach(element => {
-            element.addEventListener('click', function() {
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 100);
-            });
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 FanConnect. All rights reserved.</p>
+        <p><a href="#terms">Terms</a> | <a href="#privacy">Privacy</a> | <a href="#contact">Contact</a></p>
+    </footer>
 </body>
 </html>
